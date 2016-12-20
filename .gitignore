@@ -25,3 +25,7 @@ _site/
 
 ### Sass ###
 *.css.map
+
+# complied file
+assets/css
+assets/js

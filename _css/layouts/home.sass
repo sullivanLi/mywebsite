@@ -4,7 +4,52 @@
 
 .home-sections
   flex: 1
-  background: pink
 
   &.is-open
     opacity: 0.7
+
+  .flex
+    display: flex
+
+    @media (max-width: 775px)
+      display: block
+
+  .flex--column
+    flex-flow: column
+
+  .flex--row
+    flex-flow: row
+
+  .flex--center
+    justify-content: center
+    align-items: center
+
+  .flex--space-around
+    justify-content: space-around
+
+.col
+  max-width: 350px
+  margin: 10px
+
+  @media (max-width: 775px)
+    max-width: 100%
+
+.col-2
+  max-width: 650px
+  margin: 10px
+
+  @media (max-width: 775px)
+    max-width: 100%
+
+.col-full
+  width: 90%
+  margin: 0 10px 10px 10px
+
+  @media (max-width: 775px)
+    max-width: 100%
+
+.col-blank
+  height: 500px
+
+  @media (max-width: 775px)
+    height: 300px
