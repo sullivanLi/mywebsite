@@ -12,9 +12,11 @@ header
 
     ul
       list-style: none
-      font-size: 20px
-      margin: 15vh 0 0 0
-      padding: 0 auto
+      font-family: 'Josefin Sans', sans-serif
+      font-size: 25px
+      margin: 25vh 0 0 0
+      padding: 0 15px 0 0
+      text-align: right
       
   @media (max-width: 775px)
     position: fixed
@@ -26,6 +28,9 @@ header
 .mobile-toggle
   z-index: 2
   display: none
+  background-color: white
+  border-radius: 5px
+  opacity: 0.8
   width: 50px
   height: 50px
   position: fixed
@@ -43,7 +48,7 @@ header
       position: relative
       width: 40px
       height: 5px
-      background-color: #777
+      background-color: #444
 
     span:before, span:after
       content: ''
@@ -51,7 +56,7 @@ header
       width: 40px
       height: 5px
       position: absolute
-      background-color: #777
+      background-color: #444
       transition-property: margin, transform
       transition-duration: 0.3s
 
