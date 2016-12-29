@@ -11,14 +11,12 @@
   .flex
     display: flex
 
-    @media (max-width: 775px)
-      display: block
-
   .flex--column
     flex-flow: column
 
   .flex--row
     flex-flow: row
+    flex-wrap: wrap
 
   .flex--center
     justify-content: center
@@ -27,7 +25,7 @@
   .flex--space-around
     justify-content: space-around
 
-.col
+.col-1
   max-width: 350px
   margin: 10px
 
@@ -47,6 +45,19 @@
 
   @media (max-width: 775px)
     max-width: 100%
+
+.col-half
+  width: 50%
+  max-width: 680px
+
+  @media (max-width: 1200px)
+    width: 100%
+    &.mobile-first
+      order: -2
+    &.mobile-second
+      order: -1
+    &.mobile-last
+      order: 99
 
 .col-blank
   height: 500px
