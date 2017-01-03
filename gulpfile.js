@@ -57,7 +57,7 @@ gulp.task('sass', function () {
 **/
 
 gulp.task('scripts', function() {
-  return gulp.src(['_js/vendor/jquery-3.1.1.js', '_js/functions.js'])
+  return gulp.src(['_js/vendor/*', '_js/*'])
     .pipe(concat('all.js'))
     .pipe(gulp.dest('assets/js'))
     .pipe(browserSync.reload({stream:true}));
