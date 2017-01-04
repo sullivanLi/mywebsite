@@ -35,7 +35,7 @@
         onMobileToggleClick();
       }
 
-      $body.animate({
+      $('body,html').animate({
           scrollTop: $target.offset().top
       }, 500);
   }
