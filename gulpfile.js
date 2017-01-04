@@ -4,6 +4,9 @@ var sass        = require('gulp-sass');
 var prefix      = require('gulp-autoprefixer');
 var cp          = require('child_process');
 var concat      = require('gulp-concat');
+var uglify      = require('gulp-uglify');
+var rename      = require('gulp-rename');
+var uglifycss   = require('gulp-uglifycss');
 
 
 var jekyll   = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
@@ -49,8 +52,15 @@ gulp.task('sass', function () {
         }))
         .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
         .pipe(gulp.dest('assets/css'))
+        .pipe(rename('main.min.css'))
+        .pipe(uglifycss({
+          "maxLineLen": 80,
+          "uglyComments": true
+          }))
+        .pipe(gulp.dest('assets/css'))
         .pipe(browserSync.reload({stream:true}));
 });
+
 
 /**
  * Compile js files 
@@ -59,6 +69,9 @@ gulp.task('sass', function () {
 gulp.task('scripts', function() {
   return gulp.src(['_js/vendor/*', '_js/*'])
     .pipe(concat('all.js'))
+    .pipe(gulp.dest('assets/js'))
+    .pipe(rename('all.min.js'))
+    .pipe(uglify())
     .pipe(gulp.dest('assets/js'))
     .pipe(browserSync.reload({stream:true}));
 });

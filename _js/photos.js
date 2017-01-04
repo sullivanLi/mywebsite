@@ -40,12 +40,12 @@
       $sliderFirstLi.css('transition-duration', '1.2s');
       $sliderFirstLi.css('transition-timing-function', 'ease-in-out');
     }
-    let pos = '-' + (imgPosition * 101) + '%';
+    var pos = '-' + (imgPosition * 101) + '%';
     $sliderFirstLi.first().css('margin-left', pos);
   }
 
   function showDesc() {
-    let $li = $slider.find('li:nth-of-type('+ (imgPosition + 1) +')');
+    var $li = $slider.find('li:nth-of-type('+ (imgPosition + 1) +')');
     $li.siblings().removeClass('show');
     $li.addClass('show');
   }

@@ -3,13 +3,15 @@
   var $worksBtn,
       $web,
       $box,
-      $box1;
+      $box1,
+      $prepareBox,
+      $showBox;
 
   function onWorkBtnClick(e) {
-    let $this = $(this);
+    var $this = $(this);
     if(!$this.hasClass('disabled')){
-      let $prepareBox = $('#' + $this.data('boxid'));
-      let $showBox = $box.find('.item.show').parent().parent();
+      $prepareBox = $('#' + $this.data('boxid'));
+      $showBox = $box.find('.item.show').parent().parent();
       hideBlock($showBox);
       setTimeout(function(){
         showBlock($prepareBox);
@@ -36,7 +38,7 @@
   }
 
   function hideBlock($box) {
-    let item_length = $box.find('.item').length;
+    var item_length = $box.find('.item').length;
     $box.find('.item').each(function(i){
       setTimeout(function(){
         $box.find('.item').eq(i).addClass('hiding');
